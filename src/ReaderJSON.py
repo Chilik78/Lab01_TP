@@ -31,7 +31,8 @@ class ReaderJSON(DataReader):
 
             for student, subjects in data.items():
                 subjects_list = [
-                    (subject, int(grade)) for subject, grade in subjects.items()
+                    (subject, int(grade)) for subject, grade 
+                    in subjects.items()
                 ]
                 result[student] = subjects_list
 
