@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 from src.Types import RatingType
 
+
 class ThirdQuartile:
+
     def __init__(self, rating: RatingType) -> None:
         self.rating: RatingType = rating
+
     def calc(self) -> RatingType:
 
         raiting_values = []
@@ -19,7 +22,7 @@ class ThirdQuartile:
         self.third_quartile = raiting_values[position_third_quartile]
 
         return self.third_quartile
-    
+
     def find(self):
         result = []
 
