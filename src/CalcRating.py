@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from Types import DataType
-RatingType = dict[str, float]
+from src.Types import DataType, RatingType
 
 class CalcRating:
     def __init__(self, data: DataType) -> None:
