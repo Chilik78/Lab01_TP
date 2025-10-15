@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 import argparse
-import sys, os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from src.CalcRating import CalcRating
 from src.TextDataReader import TextDataReader
 from src.ReaderJSON import ReaderJSON

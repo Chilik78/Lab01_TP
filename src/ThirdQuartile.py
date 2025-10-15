@@ -22,7 +22,8 @@ class ThirdQuartile:
 
         position_second_quartile = int(position_second_quartile)
         position_third_quartile = int(position_third_quartile) - 1
-        self.third_quartile_values = raiting_values[position_second_quartile:position_third_quartile+1]
+        self.third_quartile_values = raiting_values[
+            position_second_quartile:position_third_quartile+1]
 
         return self.third_quartile_values
 
