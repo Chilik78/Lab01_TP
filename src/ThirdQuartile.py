@@ -17,17 +17,20 @@ class ThirdQuartile:
         raiting_values = list(sorted(raiting_values))
 
         count_values = len(raiting_values)
-        position_third_quartile = 0.75 * (count_values + 1)
-        position_third_quartile = int(position_third_quartile) - 1
-        self.third_quartile = raiting_values[position_third_quartile]
+        position_second_quartile = 0.5 * count_values
+        position_third_quartile = 0.75 * count_values
 
-        return self.third_quartile
+        position_second_quartile = int(position_second_quartile)
+        position_third_quartile = int(position_third_quartile) - 1
+        self.third_quartile_values = raiting_values[position_second_quartile:position_third_quartile+1]
+
+        return self.third_quartile_values
 
     def find(self):
         result = []
 
         for key, val in self.rating.items():
-            if val == self.third_quartile:
+            if val in self.third_quartile_values:
                 result.append(key)
 
         return result

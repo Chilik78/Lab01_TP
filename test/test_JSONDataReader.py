@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import pytest
 import json
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.Types import DataType
 from src.ReaderJSON import ReaderJSON
 
@@ -43,3 +45,4 @@ class TestTextDataReader:
     def test_read(self, filepath_and_data: tuple[str, DataType]) -> None:
         file_content = ReaderJSON().read(filepath_and_data[0])
         assert file_content == filepath_and_data[1]
+        assert len(file_content) == 2

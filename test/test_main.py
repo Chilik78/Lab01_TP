@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.main import get_path_from_arguments
 import pytest
-
 
 @pytest.fixture()
 def correct_arguments_string() -> tuple[list[str], str]:

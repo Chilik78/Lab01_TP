@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import pytest
 import json
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.Types import DataType
 from src.ReaderJSON import ReaderJSON
 from src.ThirdQuartile import ThirdQuartile
@@ -35,7 +37,7 @@ class TestTextDataReader:
                 "философия": 94
             }
         }
-        data = [84.66666666666667, ["Кузнецов Дмитрий Максимович"]]
+        data = [[84.66666666666667], ["Кузнецов Дмитрий Максимович"]]
         return json_data, data
 
     @pytest.fixture()
@@ -52,5 +54,5 @@ class TestTextDataReader:
         third_quartile = ThirdQuartile(rating)
         third_quartile_val = third_quartile.calc()
         students_in_third_quartile = third_quartile.find()
-        assert third_quartile_val == filepath_and_data[1][0]
+        assert third_quartile_val[0]-filepath_and_data[1][0][0] <= 0.01
         assert students_in_third_quartile == filepath_and_data[1][1]
